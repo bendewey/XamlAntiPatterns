@@ -59,7 +59,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="1-InlineStyles\NoFontOnRamp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="2-ColorResources\ColorResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="3-Icons\Icons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -70,8 +78,14 @@
     <Compile Include="1-InlineStyles\InlineStyles1.xaml.cs">
       <DependentUpon>InlineStyles1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="1-InlineStyles\NoFontOnRamp.xaml.cs">
+      <DependentUpon>NoFontOnRamp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="2-ColorResources\ColorResource.xaml.cs">
       <DependentUpon>ColorResource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="3-Icons\Icons.xaml.cs">
+      <DependentUpon>Icons.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -118,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1-InlineStyles\InlineStyles.html" />
+    <Resource Include="3-Icons\Cereal-Corn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

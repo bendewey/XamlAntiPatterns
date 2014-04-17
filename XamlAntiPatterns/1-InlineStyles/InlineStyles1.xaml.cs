@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace XamlAntiPatterns._1_InlineStyles
 {
@@ -10,6 +12,12 @@ namespace XamlAntiPatterns._1_InlineStyles
         public InlineStyles1()
         {
             InitializeComponent();
+        }
+
+        private void Navigate_Click(object sender, RoutedEventArgs e)
+        {
+            var uri = (string)((FrameworkElement)sender).Tag;
+            NavigationService.Navigate(new Uri(uri, UriKind.Relative));
         }
     }
 }

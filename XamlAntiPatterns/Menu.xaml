@@ -47,7 +47,7 @@
                 </Viewbox>
             </Button>
 
-			<Button Tag="1-ColorResources/ColorResource.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FFC9960F" Grid.Row="0" Grid.Column="2">
+			<Button Tag="3-Icons/Icons.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FFC9960F" Grid.Row="0" Grid.Column="2">
                 <Viewbox Margin="10">
                     <Grid Width="130" Height="130">
                         <TextBlock Text="Icons &gt;" FontSize="12" />

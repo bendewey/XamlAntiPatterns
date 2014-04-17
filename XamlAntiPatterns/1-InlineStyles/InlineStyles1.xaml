@@ -4,8 +4,24 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-	Title="Inline Styles" Tag="#FFA80000">
+      d:DesignHeight="600" d:DesignWidth="800"
+	Title="Inline Styles" Tag="{DynamicResource Sin1ThemeBrush}">
+	<Page.Resources>
+		<SolidColorBrush x:Key="Sin1ThemeBrush" Color="#FFA80000"/>
+		<Style TargetType="{x:Type TextBlock}">
+			<Setter Property="Margin" Value="4"/>
+		</Style>
+		<Style x:Key="HeaderTextBlockStyle" TargetType="{x:Type TextBlock}">
+			<Setter Property="Foreground" Value="{DynamicResource Sin1ThemeBrush}"/>
+			<Setter Property="FontFamily" Value="Segoe UI Light"/>
+			<Setter Property="FontSize" Value="29.333"/>
+			<Setter Property="Margin" Value="4"/>
+		</Style>
+		<Style TargetType="{x:Type StackPanel}">
+			<Setter Property="Margin" Value="20"/>
+		</Style>
+		
+	</Page.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -13,10 +29,15 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            
-        </Grid.RowDefinitions>
-        <StackPanel>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<StackPanel>
+			<TextBlock Text="Inline" Style="{DynamicResource HeaderTextBlockStyle}" />
+			<TextBlock Text="Inline Styling clutters your XAML and wastes time when updating values.  These should be used sparingly." TextWrapping="Wrap" />
+		</StackPanel>
+        <StackPanel Grid.Row="1">
             <TextBlock FontFamily="Segoe UI" FontSize="20" Foreground="#FF444444" Text="First Name" />
             <TextBox FontSize="18" />
             <TextBlock FontFamily="Segoe UI" FontSize="20" Foreground="#FF444444" Text="Last Name" />
@@ -27,12 +48,17 @@
             <TextBox FontSize="18" />
         </StackPanel>
 
-        <StackPanel Grid.Column="1">
+		<StackPanel Grid.Column="1">
+			<TextBlock Text="Explicit Style" Style="{DynamicResource HeaderTextBlockStyle}" />
+			<TextBlock Text="Explicit Sytling can you used anywhere with a vast inhertitance hierarchy.  Changes need only be made in one place." TextWrapping="Wrap" />
+		</StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1">
             <StackPanel.Resources>
                 <Style x:Key="TextBlockLabelStyle" TargetType="TextBlock">
                     <Setter Property="FontFamily" Value="Segoe UI"/>
                     <Setter Property="FontSize" Value="20"/>
                     <Setter Property="Foreground" Value="#FF444444"/>
+                    <Setter Property="Margin" Value="4"/>
                 </Style>
                 <Style x:Key="TextBoxStyle" TargetType="TextBox">
                     <Setter Property="FontSize" Value="18"/>
@@ -48,12 +74,17 @@
             <TextBox Style="{StaticResource TextBoxStyle}" />
         </StackPanel>
 
-        <StackPanel Grid.Column="2">
+		<StackPanel Grid.Column="2">
+			<TextBlock Text="Implicit Style" Style="{DynamicResource HeaderTextBlockStyle}" />
+			<TextBlock Text="Setting an Implicit Sytle affects all controls within a specific context that do not have an explicit context.  Cannot be used with DynamicResource, or ThemeResource in Windows Store Apps" TextWrapping="Wrap" />
+		</StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="1">
             <StackPanel.Resources>
                 <Style TargetType="TextBlock">
                     <Setter Property="FontFamily" Value="Segoe UI"/>
                     <Setter Property="FontSize" Value="20"/>
                     <Setter Property="Foreground" Value="#FF444444"/>
+			        <Setter Property="Margin" Value="4"/>
                 </Style>
                 <Style TargetType="TextBox">
                     <Setter Property="FontSize" Value="18"/>
@@ -67,6 +98,8 @@
             <TextBox />
             <TextBlock Text="Email" />
             <TextBox />
+            
+            <Button Click="Navigate_Click" Content="No On Ramp" Tag="/1-InlineStyles/NoFontOnRamp.xaml" />
         </StackPanel>
     </Grid>
 </Page>

@@ -4,21 +4,26 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="600" d:DesignWidth="800"
 	Title="Color Resource" Tag="#FFA84C00">
 
     <Page.Resources>
         <Style x:Key="HeadingTextBlockStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="30" />
         </Style>
+        <SolidColorBrush x:Key="Sin2ThemeColor" Color="#FFA84C00"/>
     </Page.Resources>
     
-    <Grid>
-        <StackPanel>
-            <Image Source="Logo.png"/>
-            <TextBlock Text="My Sample Heading" Foreground="#f00" Style="{StaticResource HeadingTextBlockStyle}"/>
-            <Rectangle Fill="#FFFA8282" Stroke="Black" StrokeThickness="1" Width="100" Height="100"/>
-            <Rectangle Fill="#F11" Stroke="Black" StrokeThickness="1" Width="100" Height="100"/>
+    <Grid Margin="20">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<TextBlock Text="Color Resource Heading" Foreground="{DynamicResource Sin2ThemeColor}" Style="{StaticResource HeadingTextBlockStyle}" Grid.ColumnSpan="2"/>
+		<TextBlock Text="II" Foreground="{DynamicResource Sin2ThemeColor}" FontSize="170.667" FontFamily="Book Antiqua" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Rectangle Fill="#FF934708" Stroke="Black" Width="200" Height="200" Margin="20"/>
+            <Rectangle Fill="#FFA84C00" Stroke="Black" Width="200" Height="200" Margin="20" />
         </StackPanel>
     </Grid>
 </Page>

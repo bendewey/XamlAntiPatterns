@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace XamlAntiPatterns._4_Mvvm
 {
@@ -24,8 +12,67 @@ namespace XamlAntiPatterns._4_Mvvm
         public Mvvm()
         {
             InitializeComponent();
+
+            // Good scenario of IoC
+            var orderService = new OrderService();
+            MvvmPanel.DataContext = new OrderViewModel(orderService);
         }
 
+        public class OrderViewModel
+        {
+            private readonly IOrderService _orderService;
+
+            public OrderViewModel(IOrderService orderService)
+            {
+                _orderService = orderService;
+
+                Order = new Order()
+                {
+                    BillingAddress = new Address(),
+                    ShippingAddress = new Address()
+                };
+            }
+
+            public Order Order { get; set; }
+
+            public void Process()
+            {
+                _orderService.Process(Order);
+            }
+        }
+
+        public class Order
+        {
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            public string Email { get; set; }
+            public string Phone { get; set; }
+            public Address BillingAddress { get; set; }
+            public Address ShippingAddress { get; set; }
+        }
+
+        public class Address
+        {
+            public string Address1 { get; set; }
+            public string Address2 { get; set; }
+            public string City { get; set; }
+            public string State { get; set; }
+            public string Zip { get; set; }
+        }
+
+        public interface IOrderService
+        {
+            void Process(Order order);
+        }
+
+        public class OrderService : IOrderService
+        {
+            public void Process(Order order)
+            {
+            }
+        }
+
+        #region Non-Mvvm
         private async void Login_Click(object sender, RoutedEventArgs e)
         {
             var username = txtUsername.Text;
@@ -37,7 +84,6 @@ namespace XamlAntiPatterns._4_Mvvm
         {
             return Task.FromResult(true);
         }
-
 
         private TextBox txtFirstName;
         private TextBox txtLastName;
@@ -82,32 +128,7 @@ namespace XamlAntiPatterns._4_Mvvm
             };
 
             _orderService.Process(order);
-        }
-
-        public class Order
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public string Email { get; set; }
-            public string Phone { get; set; }
-            public Address BillingAddress { get; set; }
-            public Address ShippingAddress { get; set; }
-        }
-
-        public class Address
-        {
-            public string Address1 { get; set; }
-            public string Address2 { get; set; }
-            public string City { get; set; }
-            public string State { get; set; }
-            public string Zip { get; set; }
-        }
-
-        public class OrderService
-        {
-            public void Process(Order order)
-            {
-            }
-        }
+        } 
+        #endregion
     }
 }

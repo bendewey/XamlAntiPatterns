@@ -56,52 +56,54 @@
             <TextBlock Text="MVVM" Style="{DynamicResource HeaderTextBlockStyle}" />
             <TextBlock Text="The answer is the Model-View-ViewModel Pattern.  This pattern uses less code, supports testability, and allows converters and validation." TextWrapping="Wrap" />
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBlock Text="Firstname" />
-            <TextBox />
-            <TextBlock Text="Lastname" />
-            <TextBox />
-            <TextBlock Text="Email" />
-            <TextBox />
-            <TextBlock Text="Phone" />
-            <TextBox />
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <GroupBox Margin="4"  Header="Billing Address">
-                    <StackPanel Margin="4">
-                        <TextBlock Text="Address1" />
-                        <TextBox />
-                        <TextBlock Text="Address2" />
-                        <TextBox />
-                        <TextBlock Text="City" />
-                        <TextBox />
-                        <TextBlock Text="State" />
-                        <TextBox />
-                        <TextBlock Text="Zip" />
-                        <TextBox />
-                    </StackPanel>
-                </GroupBox>
+        <ScrollViewer x:Name="MvvmPanel" Grid.Row="1" Grid.Column="1">
+            <StackPanel DataContext="{Binding Order}">
+                <TextBlock Text="Firstname" />
+                <TextBox Text="{Binding Firstname, Mode=TwoWay}" />
+                <TextBlock Text="Lastname" />
+                <TextBox Text="{Binding Lastname, Mode=TwoWay}" />
+                <TextBlock Text="Email" />
+                <TextBox Text="{Binding Email, Mode=TwoWay}" />
+                <TextBlock Text="Phone" />
+                <TextBox Text="{Binding Phone, Mode=TwoWay}" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Margin="4"  Header="Billing Address">
+                        <StackPanel Margin="4">
+                            <TextBlock Text="Address1" />
+                            <TextBox Text="{Binding Billing.Address1, Mode=TwoWay}" />
+                            <TextBlock Text="Address2" />
+                            <TextBox Text="{Binding Billing.Address2, Mode=TwoWay}" />
+                            <TextBlock Text="City" />
+                            <TextBox Text="{Binding Billing.City, Mode=TwoWay}" />
+                            <TextBlock Text="State" />
+                            <TextBox Text="{Binding Billing.State, Mode=TwoWay}" />
+                            <TextBlock Text="Zip" />
+                            <TextBox Text="{Binding Billing.Zip, Mode=TwoWay}" />
+                        </StackPanel>
+                    </GroupBox>
 
-                <GroupBox Grid.Column="1" Margin="4" Header="Shipping Address">
-                    <StackPanel Margin="4">
-                        <TextBlock Text="Address1" />
-                        <TextBox />
-                        <TextBlock Text="Address2" />
-                        <TextBox />
-                        <TextBlock Text="City" />
-                        <TextBox />
-                        <TextBlock Text="State" />
-                        <TextBox />
-                        <TextBlock Text="Zip" />
-                        <TextBox />
-                    </StackPanel>
-                </GroupBox>
-            </Grid>
-            
-            <Button Content="Place Order" />
-        </StackPanel>
+                    <GroupBox Grid.Column="1" Margin="4" Header="Shipping Address">
+                        <StackPanel Margin="4">
+                            <TextBlock Text="Address1" />
+                            <TextBox Text="{Binding Shipping.Address1, Mode=TwoWay}" />
+                            <TextBlock Text="Address2" />
+                            <TextBox Text="{Binding Shipping.Address2, Mode=TwoWay}" />
+                            <TextBlock Text="City" />
+                            <TextBox Text="{Binding Shipping.City, Mode=TwoWay}" />
+                            <TextBlock Text="State" />
+                            <TextBox Text="{Binding Shipping.State, Mode=TwoWay}" />
+                            <TextBlock Text="Zip" />
+                            <TextBox Text="{Binding Shipping.Zip, Mode=TwoWay}" />
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+
+                <Button Content="Place Order" FontSize="18" />
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

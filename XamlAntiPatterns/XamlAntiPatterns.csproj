@@ -71,6 +71,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="5-UserControl\AddressControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="5-UserControl\UserControlSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="4-Mvvm\Mvvm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -90,6 +98,12 @@
     </Compile>
     <Compile Include="3-Icons\Icons.xaml.cs">
       <DependentUpon>Icons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="5-UserControl\AddressControl.xaml.cs">
+      <DependentUpon>AddressControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="5-UserControl\UserControlSample.xaml.cs">
+      <DependentUpon>UserControlSample.xaml</DependentUpon>
     </Compile>
     <Compile Include="4-Mvvm\Mvvm.xaml.cs">
       <DependentUpon>Mvvm.xaml</DependentUpon>

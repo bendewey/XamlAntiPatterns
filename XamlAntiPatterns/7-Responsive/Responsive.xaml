@@ -38,13 +38,16 @@
             <TextBlock Text="Using absolute positioning and marginal positioning created by Blend doesn't scale well to different screen/windows sizes." TextWrapping="Wrap" />
         </StackPanel>
         <Grid Grid.Row="2">
-            <Rectangle Fill="#FFFF0000" Height="50" Width="50" Margin="10, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <Rectangle Fill="#FFEE0000" Height="50" Width="50" Margin="120, 80, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <Rectangle Fill="#FFDD0000" Height="50" Width="50" Margin="190, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <Rectangle Fill="#FFCC0000" Height="50" Width="50" Margin="10, 140, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <TextBlock Text="Some text on the left side of the screen." HorizontalAlignment="Left" />
+            <TextBlock Text="But also Text on the Right side of the screen." HorizontalAlignment="Right" />
+            
+            <Rectangle Fill="#FFFF0000" Height="50" Width="50" Margin="60, 90, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Rectangle Fill="#FFEE0000" Height="50" Width="50" Margin="120, 40, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Rectangle Fill="#FFDD0000" Height="50" Width="50" Margin="190, 60, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Rectangle Fill="#FFCC0000" Height="50" Width="50" Margin="0, 60, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" />
             <Rectangle Fill="#FFBB0000" Height="50" Width="50" Margin="300, 310, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" />
             <Rectangle Fill="#FFAA0000" Height="50" Width="50" Margin="210, 120, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <Rectangle Fill="#FF990000" Height="50" Width="50" Margin="350, 20, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Rectangle Fill="#FF990000" Height="50" Width="50" Margin="350, 30, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" />
             <Rectangle Fill="#FF880000" Height="50" Width="50" Margin="400, 200, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" />
             <Rectangle Fill="#FF770000" Height="50" Width="50" Margin="0, 0, 210, 90" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
             <Rectangle Fill="#FF660000" Height="50" Width="50" Margin="0, 0, 90, 210" HorizontalAlignment="Right" VerticalAlignment="Bottom" />

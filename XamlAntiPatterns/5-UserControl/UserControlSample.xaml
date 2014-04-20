@@ -6,7 +6,7 @@
       xmlns:UserControl="clr-namespace:XamlAntiPatterns._5_UserControl"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="800"
-	Title="Model-View-ViewModel" Tag="{DynamicResource Sin5ThemeBrush}">
+	Title="User Controls" Tag="{DynamicResource Sin5ThemeBrush}">
     <Page.Resources>
         <SolidColorBrush x:Key="Sin5ThemeBrush" Color="#FF0F00A8"/>
         <Style TargetType="{x:Type TextBlock}">

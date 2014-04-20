@@ -65,7 +65,7 @@
                 </Viewbox>
             </Button>
 
-			<Button Tag="1-ColorResources/ColorResource.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF0F00A8" Grid.Row="1" Grid.Column="0">
+			<Button Tag="5-UserControl/UserControlSample.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF0F00A8" Grid.Row="1" Grid.Column="0">
             	<Viewbox Margin="10">
             		<Grid Width="130" Height="130">
             			<TextBlock Text="User Controls &gt;" FontSize="12" />
@@ -74,7 +74,7 @@
             	</Viewbox>
             </Button>
 
-			<Button Tag="1-ColorResources/ColorResource.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF006BA8" Grid.Row="1" Grid.Column="1">
+			<Button Tag="6-TemplateOverrides/TemplateOverrides.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF006BA8" Grid.Row="1" Grid.Column="1">
                 <Viewbox Margin="10">
                     <Grid Width="130" Height="130">
                         <TextBlock Text="Template Overrides &gt;" FontSize="12" />

@@ -87,6 +87,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="7-Responsive\Responsive.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -115,6 +119,9 @@
     </Compile>
     <Compile Include="4-Mvvm\Mvvm.xaml.cs">
       <DependentUpon>Mvvm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="7-Responsive\Responsive.xaml.cs">
+      <DependentUpon>Responsive.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -167,9 +174,7 @@
     <Content Include="1-InlineStyles\InlineStyles.html" />
     <Resource Include="3-Icons\Cereal-Corn.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="7-Responsive\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -83,7 +83,7 @@
                 </Viewbox>
             </Button>
 
-            <Button Tag="1-ColorResources/ColorResource.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF1A6480" Grid.Row="1" Grid.Column="2">
+            <Button Tag="7-Responsive/Responsive.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF1A6480" Grid.Row="1" Grid.Column="2">
                 <Viewbox Margin="10">
                     <Grid Width="130" Height="130">
                         <TextBlock Text="Responsive &gt;" FontSize="12" />

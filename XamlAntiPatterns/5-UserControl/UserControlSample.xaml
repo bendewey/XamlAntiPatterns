@@ -42,33 +42,33 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <GroupBox Margin="4"  Header="Billing Address">
+            <GroupBox Margin="4" DataContext="{Binding BillingAddress}" Header="Billing Address">
                 <StackPanel Margin="4">
                     <TextBlock Text="Address1" />
-                    <TextBox />
+                    <TextBox Text="{Binding Address1}" />
                     <TextBlock Text="Address2" />
-                    <TextBox />
+                    <TextBox Text="{Binding Address2}" />
                     <TextBlock Text="City" />
-                    <TextBox />
+                    <TextBox Text="{Binding City}" />
                     <TextBlock Text="State" />
-                    <TextBox />
+                    <TextBox Text="{Binding State}" />
                     <TextBlock Text="Zip" />
-                    <TextBox />
+                    <TextBox Text="{Binding Zip}" />
                 </StackPanel>
             </GroupBox>
 
-            <GroupBox Grid.Column="1" Margin="4" Header="Shipping Address">
+            <GroupBox Grid.Column="1" Margin="4" DataContext="{Binding ShippingAddress}" Header="Shipping Address">
                 <StackPanel Margin="4">
                     <TextBlock Text="Address1" />
-                    <TextBox />
+                    <TextBox Text="{Binding Address1}" />
                     <TextBlock Text="Address2" />
-                    <TextBox />
+                    <TextBox Text="{Binding Address2}" />
                     <TextBlock Text="City" />
-                    <TextBox />
+                    <TextBox Text="{Binding City}" />
                     <TextBlock Text="State" />
-                    <TextBox />
+                    <TextBox Text="{Binding State}" />
                     <TextBlock Text="Zip" />
-                    <TextBox />
+                    <TextBox Text="{Binding Zip}" />
                 </StackPanel>
             </GroupBox>
         </Grid>

@@ -99,7 +99,6 @@
             <TextBlock Text="Email" />
             <TextBox />
             
-            <Button Click="Navigate_Click" Content="No On Ramp" Tag="/1-InlineStyles/NoFontOnRamp.xaml" />
         </StackPanel>
     </Grid>
 </Page>

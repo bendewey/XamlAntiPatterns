@@ -27,7 +27,6 @@
     <Responsive:ResponsiveSplitView>
         <Responsive:ResponsiveSplitView.LeftContent>
 
-
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -134,8 +133,7 @@
                         <Rectangle Fill="#FF660000" Height="50" Width="50" Margin="4" />
                     </WrapPanel>
                 </DockPanel>
-            </Grid>
-            
+            </Grid>            
         </Responsive:ResponsiveSplitView.RightContent>
     </Responsive:ResponsiveSplitView>
 </Page>

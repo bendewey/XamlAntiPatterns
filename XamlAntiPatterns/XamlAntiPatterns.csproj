@@ -123,6 +123,7 @@
     <Compile Include="7-Responsive\Responsive.xaml.cs">
       <DependentUpon>Responsive.xaml</DependentUpon>
     </Compile>
+    <Compile Include="7-Responsive\ResponsiveSplitView.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>

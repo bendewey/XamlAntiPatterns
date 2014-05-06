@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:TemplateOverrides="clr-namespace:XamlAntiPatterns._6_TemplateOverrides">
+                    xmlns:TemplateOverrides="clr-namespace:XamlAntiPatterns._6_TemplateOverrides"
+                    xmlns:Responsive="clr-namespace:XamlAntiPatterns._7_Responsive">
     
     <Style TargetType="TemplateOverrides:NewContent">
         <Setter Property="Template">
@@ -27,6 +28,35 @@
                             </Border>
                         </Border>
                     </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
+
+
+    <Style TargetType="Responsive:ResponsiveSplitView">
+        <Setter Property="Padding" Value="6"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Responsive:ResponsiveSplitView">
+                    <ScrollViewer x:Name="PART_ScrollViewer">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition x:Name="PART_SecondColumnDefinition" Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <ContentControl x:Name="PART_LeftContent" Content="{TemplateBinding LeftContent}" Grid.Row="0"  Grid.Column="0" Margin="{TemplateBinding Padding}" />
+                            <ContentControl x:Name="PART_RightContent" Content="{TemplateBinding RightContent}" Grid.Row="0" Grid.Column="1" Margin="{TemplateBinding Padding}" />
+                        </Grid>
+                    </ScrollViewer>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
